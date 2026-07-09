@@ -1,0 +1,139 @@
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+.loader{
+    position:fixed;
+    inset:0;
+    width:100%;
+    height:100vh;
+    background:radial-gradient(circle at center,#0b1020 0%,#05070f 55%,#000 100%);
+    overflow:hidden;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    z-index:9999;
+}
+
+.loader canvas{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+}
+
+.loader::before{
+    content:"";
+    position:absolute;
+    width:500px;
+    height:500px;
+    border-radius:50%;
+    background:rgba(255,255,255,.03);
+    filter:blur(120px);
+    animation:pulse 5s ease-in-out infinite;
+}
+
+.loader-content{
+    position:relative;
+    z-index:2;
+    width:320px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+}
+
+.loader-content h1{
+    color:#fff;
+    font-size:64px;
+    font-weight:800;
+    letter-spacing:12px;
+    margin-bottom:18px;
+
+    text-shadow:
+        0 0 10px rgba(255,255,255,.5),
+        0 0 30px rgba(255,255,255,.2);
+
+    animation:float 3s ease-in-out infinite;
+}
+
+.loader-content p{
+    color:#cfcfcf;
+    font-size:20px;
+    letter-spacing:4px;
+    margin-bottom:28px;
+}
+
+.progress{
+    width:100%;
+    height:4px;
+    border-radius:50px;
+    background:rgba(255,255,255,.08);
+    overflow:hidden;
+}
+
+.fill{
+    height:100%;
+    width:0;
+    border-radius:50px;
+
+    background:linear-gradient(
+        90deg,
+        #ffffff,
+        #d7e8ff,
+        #ffffff
+    );
+
+    box-shadow:
+        0 0 10px #fff,
+        0 0 25px rgba(255,255,255,.5);
+
+    transition:width .15s linear;
+}
+
+@keyframes pulse{
+
+    0%,100%{
+        transform:scale(.9);
+        opacity:.3;
+    }
+
+    50%{
+        transform:scale(1.2);
+        opacity:.6;
+    }
+
+}
+
+@keyframes float{
+
+    0%,100%{
+        transform:translateY(0px);
+    }
+
+    50%{
+        transform:translateY(-8px);
+    }
+
+}
+
+@media(max-width:768px){
+
+.loader-content{
+    width:260px;
+}
+
+.loader-content h1{
+    font-size:42px;
+    letter-spacing:8px;
+}
+
+.loader-content p{
+    font-size:16px;
+}
+
+}
+
