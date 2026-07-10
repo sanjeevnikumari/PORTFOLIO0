@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import Hexagon from "./Hexagon";
 import { skills } from "../components/skills";
-import "./hexagon.css";
+import "./Hexagon.css";
 
 const rows = [
   [0, 1, 2],
