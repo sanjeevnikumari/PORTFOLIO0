@@ -26,7 +26,7 @@ const Navbar = () => {
   return (
     <header className="fixed top-5 left-0 w-full z-50 flex justify-center px-4">
       <nav
-        className={`relative w-full max-w-[2000px] rounded-2xl border transition-all duration-300
+        className={`relative w-full max-w-[2000px] rounded-xl border transition-all duration-300
         ${
           scrolled
             ? "bg-white/10 border-white/20 backdrop-blur-2xl shadow-2xl"
@@ -36,7 +36,7 @@ const Navbar = () => {
         {/* Glow */}
         <div className="absolute inset-0 -z-10 rounded-2xl bg-gradient-to-r from-cyan-500/10 via-blue-500/10 to-purple-500/10 blur-3xl"></div>
 
-        <div className="flex items-center justify-between px-7 py-4">
+        <div className="flex items-center justify-between px-2 py-2">
           {/* Logo */}
           <a
             href="#home"
